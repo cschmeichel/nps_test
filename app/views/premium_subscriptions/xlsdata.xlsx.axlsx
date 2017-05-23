@@ -14,7 +14,8 @@ wb.styles do |style|
                 'Shirt Size',
                 'Subscription Length',
                 'Subscription Date',
-                'Shipped?'
+                'Shipped?',
+                'Address'
             ], style: title if @premium_subscriptions.any?
 
         @premium_subscriptions.each do |subscription|
@@ -24,13 +25,15 @@ wb.styles do |style|
                 subscription.shirt_size,
                 subscription.subscription_length.humanize,
                 subscription.created_at,
-                subscription.shipped
+                subscription.shipped,
+                subscription.shipping_address
             ], style: [
                 nil,
                 nil,
                 nil,
                 nil,
                 date_cell,
+                nil,
                 nil
             ]
         end
