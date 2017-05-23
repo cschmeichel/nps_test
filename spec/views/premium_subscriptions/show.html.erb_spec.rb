@@ -5,7 +5,7 @@ RSpec.describe "premium_subscriptions/show", type: :view do
     @premium_subscription = assign(:premium_subscription, PremiumSubscription.create!(
       :shirt_size => 2,
       :user_id => 3,
-      :subscription_length => 4,
+      :subscription_length => 2,
       :shipped => false,
       :shipping_address => ""
     ))

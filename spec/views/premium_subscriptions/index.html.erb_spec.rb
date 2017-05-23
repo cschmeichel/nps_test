@@ -6,14 +6,14 @@ RSpec.describe "premium_subscriptions/index", type: :view do
       PremiumSubscription.create!(
         :shirt_size => 2,
         :user_id => 3,
-        :subscription_length => 4,
+        :subscription_length => 2,
         :shipped => false,
         :shipping_address => ""
       ),
       PremiumSubscription.create!(
         :shirt_size => 2,
         :user_id => 3,
-        :subscription_length => 4,
+        :subscription_length => 2,
         :shipped => false,
         :shipping_address => ""
       )
