@@ -1,0 +1,42 @@
+<%= form_for(premium_subscription) do |f| %>
+    <% if premium_subscription.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(premium_subscription.errors.count, "error") %> prohibited this premium_subscription from being saved:</h2>
+
+          <ul>
+            <% premium_subscription.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :shirt_size %>
+      <%= f.select :shirt_size, PremiumSubscription.shirt_sizes.keys %>
+    </div>
+
+    <div class="field">
+      <%= f.label :user_id %>
+      <%= f.number_field :user_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :subscription_length %>
+      <%= f.select :subscription_length, PremiumSubscription.subscription_lengths.keys %>
+    </div>
+
+    <div class="field">
+      <%= f.label :shipped %>
+      <%= f.check_box :shipped %>
+    </div>
+
+    <div class="field">
+      <%= f.label :shipping_address %>
+      <%= f.text_field :shipping_address %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

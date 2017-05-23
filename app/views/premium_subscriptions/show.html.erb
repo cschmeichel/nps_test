@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shirt size:</strong>
+  <%= @premium_subscription.shirt_size %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @premium_subscription.user_id %>
+</p>
+
+<p>
+  <strong>Subscription length:</strong>
+  <%= @premium_subscription.subscription_length.humanize %>
+</p>
+
+<p>
+  <strong>Shipped:</strong>
+  <%= @premium_subscription.shipped %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @premium_subscription.shipping_address %>
+</p>
+
+<%= link_to 'Edit', edit_premium_subscription_path(@premium_subscription) %> |
+<%= link_to 'Back', premium_subscriptions_path %>

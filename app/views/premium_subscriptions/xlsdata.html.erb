@@ -1,0 +1,18 @@
+<h1>Premium Subscriptions Query</h1>
+
+<%= form_tag(xlsdata_premium_subscriptions_path(format: :xlsx), method: 'get') do %>
+    <%= label_tag(:date, "Date:") %>
+    <%= select_date nil, prefix: :date, include_blank: true %>
+    <%= label_tag(:max_entries, "Max Entries:") %>
+    <%= number_field_tag :max_entries, 20  %>
+    <br>
+    <%= radio_button_tag(:sort_by, "created_at", checked: true) %>
+    <%= label_tag(:sort_date, "Sort By Date") %>
+    <%= radio_button_tag(:sort_by, "shirt_size") %>
+    <%= label_tag(:sort_shirt, "Sort By Shirt Size") %>
+    <br>
+    <%= submit_tag("Search") %>
+<% end %>
+
+<%= link_to 'Users', users_path %> |
+<%= link_to 'Premium Subscriptions', premium_subscriptions_path %>
